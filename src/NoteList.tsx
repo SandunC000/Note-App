@@ -3,6 +3,7 @@ import { Button, Card, Col, Form, Row, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ReactSelect from "react-select";
 import { Tag } from "./App";
+import styles from "./NoteList.module.css"
 
 type SimplifiedNote = {
   tags: Tag[];
@@ -96,7 +97,11 @@ export function NoteList({ availableTags, notes }: NoteListProps) {
 
 function NoteCard({ id, title, tags }: SimplifiedNote) {
   return
-  <Card >
+  <Card
+    as={Link}
+    to={`/${id}`}
+    className={`h-100 text-reset text-decoration-none ${styles.card}`}
+  >
     <Card.Body>
 
     </Card.Body>
