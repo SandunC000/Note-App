@@ -1,19 +1,19 @@
-import React, { useMemo, useState } from "react";
-import { Button, Col, Form, Row, Stack } from "react-bootstrap";
+import { useMemo, useState } from "react";
+import { Button, Card, Col, Form, Row, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ReactSelect from "react-select";
-import { Note, Tag } from "./App";
+import { Tag } from "./App";
+
+type SimplifiedNote = {
+  tags: Tag[];
+  title: string;
+  id: string;
+};
 
 type NoteListProps = {
   availableTags: Tag[];
-  notes: Note[];
+  notes: SimplifiedNote[];
 };
-
-type SimplifiedNote = {
-    tags: Tag[]
-    title: string
-    id: string
-}
 
 export function NoteList({ availableTags, notes }: NoteListProps) {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
@@ -94,7 +94,12 @@ export function NoteList({ availableTags, notes }: NoteListProps) {
   );
 }
 
+function NoteCard({ id, title, tags }: SimplifiedNote) {
+  return
+  <Card >
+    <Card.Body>
 
-function NoteCard ({id, title, tags}: SimplifiedNote) {
-    return <h1>hi</h1>
+    </Card.Body>
+    
+  </Card>
 }
